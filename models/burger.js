@@ -6,4 +6,6 @@ var allBurgers = function() {
     })
 }
 
+module.exports = allBurgers
+
 //Add newBurger() and updateBurger
