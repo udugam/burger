@@ -1,0 +1,22 @@
+<h1>Burgers!</h1>
+<h2>
+    Menu
+</h2>
+<ul>
+    {{#each burgers}}
+        <li data-id="{{id}}" data-eaten="{{Devoured}}">
+            {{BurgerName}}
+            <button id="eat">Eat It!</button>
+        </li>
+    {{/each}}
+</ul>
+
+<h2 id="eaten">
+    Eaten
+</h2>
+
+<h2>
+    New Burger
+</h2>
+<input id='newBurgerInput'> 
+<button id='submitBurger'>Eat It!</button>

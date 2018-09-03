@@ -1,11 +1,11 @@
-var connection = require('mysql')
+var mysql = require('mysql')
 
-connection.createConnection({
+var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "password",
     port: "3306",
-    database: "burger"
+    database: "burgers_db"
 }) 
 
 connection.connect(function(err){

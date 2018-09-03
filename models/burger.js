@@ -1,11 +1,13 @@
 var orm = require("../config/orm.js")
 
-var allBurgers = function() {
-    orm.selectAll("burgers", function(result) {
-        return result
-    })
+var burger = {
+    all: function(callback) {
+        orm.selectAll("burgers", function(result) {
+            callback(result)
+        })
+    }
 }
 
-module.exports = allBurgers
+module.exports = burger
 
 //Add newBurger() and updateBurger
