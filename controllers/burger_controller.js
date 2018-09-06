@@ -14,4 +14,21 @@ router.get('/', function(req,res){
     })
 })
 
+//New Burger Post Route
+router.post('/api/burger', function(req,res) {
+    var burgerData = req.body
+    burger.addBurger(burgerData, function(response){
+        res.json(true)
+    })
+})
+
+//New Burger Update Route
+router.post('/api/burger/:id', function(req,res) {
+    var burgerData = req.body
+    console.log(req.params.id)
+    burger.updateBurger(burgerData, req.params.id, function(response){
+        res.json(true)
+    })
+})
+
 module.exports = router
