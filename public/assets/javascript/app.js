@@ -9,7 +9,9 @@ $("#submitBurger").on("click", function() {
         method: 'POST',
         data: burgerObj
     }).then(function(response) {
-        console.log(response)
+        if(response==true) {
+            window.location.replace('/')
+        }
     }) 
 })
 
@@ -24,6 +26,8 @@ $(".eat").on("click", function() {
         method: 'POST',
         data: burgerUpdate
     }).then(function(response) {
-        console.log(response)
+        if(response==true) {
+            window.location.replace('/')        
+        }
     }) 
 })

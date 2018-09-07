@@ -1,28 +1,37 @@
-<h1>Burgers!</h1>
-<h2>Eaten</h2>
-    <ol>
-        {{#each burgers}}
-            {{#if Devoured}}
-            <li> {{BurgerName}} </li>
-            {{/if}}
-        {{/each}}
-    </ol>
+<div class='jumbotron'>
+    <div class='container'>
+        <h1 class='display-4 text-center'>Eat Da Burger!</h1>
+        <div class='row'>
+            <div class='col-4 text-center'>
+                <h2>Menu</h2>
+                <ol>
+                    {{#each burgers}}
+                        {{#unless Devoured}} 
+                            <li>
+                                {{BurgerName}}
+                                <button class="eat" data-id="{{id}}" data-eaten="{{Devoured}}">Eat It!</button>
+                            </li>
+                        {{/unless}}
+                    {{/each}}
+                </ol>
+            </div>
+            <div class='col-4 text-center'>
+                <h2>New Burger</h2>
+                <input id='newBurgerInput'> 
+                <button id='submitBurger'>Add to Menu</button>
+            </div>
+            <div class='col-4 text-center'>
+                <h2>Eaten</h2>
+                <ol>
+                    {{#each burgers}}
+                        {{#if Devoured}}
+                        <li> {{BurgerName}} </li>
+                        {{/if}}
+                    {{/each}}
+                </ol>
+            </div>
+        </div>
 
 
-<h2>Menu</h2>
-    <ol>
-        {{#each burgers}}
-            {{#unless Devoured}} 
-                <li>
-                    {{BurgerName}}
-                    <button class="eat" data-id="{{id}}" data-eaten="{{Devoured}}">Eat It!</button>
-                </li>
-            {{/unless}}
-        {{/each}}
-    </ol>
-
-<h2>
-    New Burger
-</h2>
-<input id='newBurgerInput'> 
-<button id='submitBurger'>Eat It!</button>
+    </div>
+</div>
